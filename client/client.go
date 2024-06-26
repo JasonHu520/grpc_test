@@ -23,9 +23,9 @@ func main() {
 
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-	r, err := c.SayHello(ctx, &test.HelloRequest{Name: "world"})
+	r, err := c.GetInfo(ctx, &test.HelloRequest{Name: "test"})
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
 	}
-	log.Printf("Greeting: %s", r.Message)
+	log.Printf("Greeting: %s", r)
 }
